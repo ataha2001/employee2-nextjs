@@ -10,8 +10,7 @@ const Dashboard = () => {
       <div className="w-full lg:w-3/4 flex flex-col gap-[20px]">
         <div className="flex gap-[20px] justify-between flex-col md:flex-row">
           <Card />
-          <Card />
-          <Card />
+         
         </div>
         <Transactions />
         <Chart />

@@ -1,30 +1,55 @@
 import Link from "next/link";
-import { MdSupervisedUserCircle } from "react-icons/md";
+import {
+  MdSupervisedUserCircle,
+  MdOutlineShoppingBasket,
+  MdPeopleAlt,
+} from "react-icons/md";
 
 const Card = () => {
   const positive = true;
-  const item={
-    title:'User',
-    count: '50',
-    path:"/",
-    iconColor :'text-red-300',
-    icon: <MdSupervisedUserCircle size={30} />,
-  }
+  const items = [
+    {
+      title: "Products",
+      count: "150",
+      path: "/dashboard/products",
+      // `/dashboard/${cat.title.toLowerCase()}`
+      iconColor: "text-red-300",
+      icon: <MdOutlineShoppingBasket size={30} />,
+    },
+    {
+      title: "Users",
+      count: "18",
+      path: "/dashboard/users",
+      iconColor: "text-green-300",
+      icon: <MdPeopleAlt size={30} />,
+    },
+    {
+      title: "Admin",
+      count: "5",
+      path: "/",
+      iconColor: "text-yellow-300",
+      icon: <MdSupervisedUserCircle size={30} />,
+    },
+  ];
   return (
-    <div className="bg-bgSoft hover:bg-[#2e374a] w-full p-4 shadow-xl   rounded-md flex flex-col gap-[20px] ">
-      <div className="">
-        <h2 className={`font-light ${item.iconColor}`}>{item.title}</h2>
-      </div>
-      <div className="">
-        <h1 className={`text-center text-6xl ${item.iconColor}`}>50</h1>
-      </div>
-      <div className={`flex justify-between ${item.iconColor}`}>
-        <Link href={'/'}  className={'text-blue-300'}>Show All</Link>
-        <span className={`${item.iconColor}`}>
-        {item.icon}
-        </span>
-      </div>
-    </div>
+    <>
+      {items?.map((item) => (
+        <div key={item.title} className="bg-bgSoft hover:bg-[#2e374a] w-full p-4 shadow-xl   rounded-md flex flex-col gap-[20px] ">
+          <div className="">
+            <h2 className={`font-light ${item.iconColor}`}>{item.title}</h2>
+          </div>
+          <div className="">
+            <h1 className={`text-center text-6xl ${item.iconColor}`}>{item.count}</h1>
+          </div>
+          <div className={`flex justify-between ${item.iconColor}`}>
+            <Link href={item.path} className={"text-blue-300"}>
+              Show All
+            </Link>
+            <span className={`${item.iconColor}`}>{item.icon}</span>
+          </div>
+        </div>
+      ))}
+    </>
   );
 };
 
@@ -43,3 +68,12 @@ export default Card;
 //         </span>
 //       </div>
 //     </div  >
+// <div className="">
+//         <h1 className={`text-center text-6xl ${item.iconColor}`}>50</h1>
+//       </div>
+//       <div className={`flex justify-between ${item.iconColor}`}>
+//         <Link href={'/'}  className={'text-blue-300'}>Show All</Link>
+//         <span className={`${item.iconColor}`}>
+//         {item.icon}
+//         </span>
+//       </div>

@@ -5,12 +5,19 @@ import Link from "next/link";
 import React from "react";
 import { fetchProducts } from "@/app/lib/data";
 import { deleteProduct } from "@/app/lib/actions";
+import LoadingFunction from "@/app/components/dashboard/LoadingFunction";
 // import { deleteProduct } from "@/app/lib/actions";
 
 const ProductsPage = async ({ searchParams }) => {
   const q = searchParams?.q || "";
   const page = searchParams?.page || 1;
   const { count, products } = await fetchProducts(q, page);
+  if(!products){
+    return (
+        <LoadingFunction loadingTitel={'Products'} />
+      
+    )
+}
   return (
     <div className="bg-bgSoft p-5 rounded-md mt-5">
       <div className="flex items-center justify-between">

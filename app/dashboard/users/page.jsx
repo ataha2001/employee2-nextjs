@@ -11,7 +11,12 @@ const UsersPage = async ({ searchParams }) => {
   const page = searchParams?.page || 1
   const {count, users} = await fetchUsers(q, page)
   // console.log('users= ', users);
-  
+  if(!users){
+    return (
+        <LoadingFunction loadingTitel={'Products'} />
+      
+    )
+}
     
   return (
     <div className="bg-bgSoft p-5 rounded-md mt-5">
