@@ -33,6 +33,7 @@ const Navbar = () => {
           <MdOutlineBrightness2 size={20} />
           <MdOutlineWbSunny size={20} />
         </div>
+        
       </div>
     </div>
   );

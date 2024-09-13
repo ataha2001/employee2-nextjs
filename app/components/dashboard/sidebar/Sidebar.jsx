@@ -1,6 +1,8 @@
 "use server";
 // import React, { useEffect, useState } from "react";
 import {
+  MdOutlineShoppingCart,
+  MdOutlineShoppingBasket,
   MdDashboard,
   MdSupervisedUserCircle,
   MdShoppingBag,
@@ -33,19 +35,19 @@ const menuItems = [
   {
     title: "Products",
     path: "/products",
-    icon: <MdPeopleAlt />,
+    icon: <MdOutlineShoppingBasket />,
     // list:[]
   },
-  {
-    title: "Employees",
-    path: "/employees",
-    icon: <MdPeopleAlt />,
-    // list:[]
-  },
+  // {
+  //   title: "Employees",
+  //   path: "/employees",
+  //   icon: <MdPeopleAlt />,
+  //   // list:[]
+  // },
   {
     title: "Users",
     path: "/users",
-    icon: <MdPeopleOutline />,
+    icon: <MdPeopleAlt />,
     // list:[]
   },
   {
@@ -90,18 +92,18 @@ const menuItems = [
         icon: <MdOutlineSettingsSuggest />,
         list: [],
       },
-      {
-        title: "Benefits",
-        path: "/benefits",
-        icon: <MdOutlineSettingsSuggest />,
-        list: [],
-      },
-      {
-        title: "Deduction",
-        path: "/deduction",
-        icon: <MdOutlineSettingsSuggest />,
-        list: [],
-      },
+      // {
+      //   title: "Benefits",
+      //   path: "/benefits",
+      //   icon: <MdOutlineSettingsSuggest />,
+      //   list: [],
+      // },
+      // {
+      //   title: "Deduction",
+      //   path: "/deduction",
+      //   icon: <MdOutlineSettingsSuggest />,
+      //   list: [],
+      // },
     ],
   },
 ];
@@ -112,7 +114,7 @@ const Sidebar = async () => {
   //   setOpenSub(!openSub);
   // };
   return (
-    <div className="h-auto overflow-auto ">
+    <div className="h-auto overflow-auto">
       <div className="flex items-center gap-5 mb-5">
         <Image
           src={user.img || "/user.png"}
@@ -154,30 +156,3 @@ const Sidebar = async () => {
 };
 
 export default Sidebar;
-// <li
-//               onClick={() =>
-//                 !cat.list
-//                   ? router.push(`/dashboard/${cat.title.toLowerCase()}`)
-//                   : null
-//               }
-//               className="text-textprimary flex mt-8 gap-4 items-center text-[20px] cursor-pointer hover:bg-bgHover hover:text-bgPrimary p-2 rounded-md"
-//               key={index}
-//             >
-//               <span className="text-[25px] ">{cat.icon}</span>
-//               <span className="flex text-[20px] justify-between items-center gap-0 w-full">
-//                 {cat.title}
-//                 {cat.list ? (
-//                   openSub ? (
-//                     <MdKeyboardArrowDown onClick={() => setOpenSub(!openSub)} />
-//                   ) : (
-//                     <MdKeyboardArrowRight
-//                       onClick={() => setOpenSub(!openSub)}
-//                     />
-//                   )
-//                 ) : null}
-//               </span>
-//             </li>
-
-// {cat.list &&
-//   openSub &&
-//   cat.list.map((item) => <Menulink item={item} key={item.title} />)}

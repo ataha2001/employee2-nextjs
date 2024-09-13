@@ -22,14 +22,23 @@ import {
   } from "react-icons/md";
 const SidebarLi = ({cat}) => {
     
-  const [openSub, setOpenSub] = useState(true);
+  const [openSub, setOpenSub] = useState(false);
   const router = useRouter();
   return (
     <>
     <li
+    // onClick={() =>
+    //   !cat.list
+    //     ? router.push(`/dashboard/${cat.title.toLowerCase()}`)
+    //     : null
+    // }
+
     onClick={() =>
+    
       !cat.list
-        ? router.push(`/dashboard/${cat.title.toLowerCase()}`)
+        ? (cat.title.toLowerCase() !== 'dashboard'  ?
+          router.push(`/dashboard/${cat.title.toLowerCase()}`)
+        : router.push(`/${cat.title.toLowerCase()}`))
         : null
     }
     className="text-textprimary flex mt-8 gap-4 items-center text-[20px] cursor-pointer hover:bg-bgHover hover:text-bgPrimary p-2 rounded-md"

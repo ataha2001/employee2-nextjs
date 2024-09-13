@@ -7,8 +7,8 @@ import Rightbar from '../components/dashboard/rightbar/Rightbar'
 const Dashboard = () => {
   return (
     <div className="flex gap-[20px] mt-[20px] ">
-      <div className="w-3/4 flex flex-col gap-[20px]">
-        <div className="flex gap-[20px] justify-between">
+      <div className="w-full lg:w-3/4 flex flex-col gap-[20px]">
+        <div className="flex gap-[20px] justify-between flex-col md:flex-row">
           <Card />
           <Card />
           <Card />
@@ -16,7 +16,7 @@ const Dashboard = () => {
         <Transactions />
         <Chart />
       </div>
-      <div className="w-1/4">
+      <div className="w-1/4 hidden lg:block ">
         <Rightbar />
       </div>
     </div>
